@@ -13,15 +13,15 @@ the same hash, regardless of their values.
 local Seashell = require(path.to.seashell)
 
 -- Hash a plain string.
-local digest: string = Seashell.hashString("hello world")
+local digest: string = Seashell.hash_string("hello world")
 -- → "2aae6c69..."
 
 -- Get the canonical key-structure string of a table.
-local sig: string = Seashell.signatureOf({ name = "Ann", age = 30 })
+local sig: string = Seashell.signature_of({ name = "Ann", age = 30 })
 -- → "age,name"
 
 -- Hash a table's key structure.
-local hash: string = Seashell.hashTable({
+local hash: string = Seashell.hash_table({
     name   = "Ann",
     age    = 30,
     address = {
@@ -38,7 +38,7 @@ local hash: string = Seashell.hashTable({
 |---|---|
 | `KeyType` | `string \| number` — the only accepted key types |
 | `HashResult` | `string` — a 40-character lowercase hex SHA-1 digest |
-| `TableLike` | `{ [any]: any }` — any table passed to the module |
+| `TableLike` | `{ [unknown]: unknown }` — any table passed to the module |
 
 ---
 
